@@ -6,12 +6,12 @@
       write(*,*) 'v3 (componentes separadas por espaço)?'
       read(*,*) v3
            
-      call PV(v1,v2,v12) !vv é o prod.vetorial
+      call PV(v1,v2,v12) !PV calcula o prod.vetorial
       call PV(v1,v3,v13)
       call PV(v2,v3,v23)
       call PV(v1-v2,v3,v123)
 
-      if (abss(v12).eq.0) then
+      if (abss(v12).eq.0) then !abss calcula o mód. do vetor
         write(*,*) 'v1 e v2 são paralelos!'
         goto 77
       endif
