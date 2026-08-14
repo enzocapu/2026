@@ -1,30 +1,31 @@
-      real*8 a(1003), b
+      real*8 a(500001), b
       n=1
 
-      open(unit=10,file='input')
-      open(unit=11,file='output')
+      open(unit=10,file='tarefa-3-entrada-1.in')
+      open(unit=11,file='tarefa-3-saida-1.out')
 
       write(*,*) 'M = ?'
       read(*,*) m
+      write(11,*) 'M = ', m
 
 10    read(10,*,end=20) a(n)
-            if (n.eq.m) then
+            if (n.eq.m) then !aplica-se a estrutura ao atingir m
                   call b_h(a,m)
             endif
             if (n.gt.m) then
-                  if (a(n).lt.a(1)) then
+                  if (a(n).lt.a(1)) then !confirma se o elemento lido é menor que a raiz
                         b = a(1)
                         a(1) = a(n)
                         a(n) = b
-                        call h_d(a,1,m)
+                        call h_d(a,1,m) !reorganiza a estrutura
                   endif
             endif
             n=n+1
             goto 10
 
-20    write(11,*) 'N = ', n-1
+20    write(*,*) 'N = ', n-1
 
-      do k=m,2,-1
+      do k=m,2,-1 !ordena o heap em ordem crescente
             b = a(1)
             a(1) = a(k)
             a(k) = b
@@ -41,7 +42,7 @@
 
 	subroutine b_h(a,m)
 	real*8 a(*)
-	do i=m/2,1,-1
+	do i=m/2,1,-1 !constrói o heap do último nó até a raiz
 		call h_d(a,i,m)
 	enddo
 	return
