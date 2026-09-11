@@ -20,6 +20,6 @@
       pi=4d0*count/total
 
       write(*,*) count,total
-      write(*,'(A,F12.4)') 'pi=',pi
+      write(*,*) 'pi=',pi
 
       end
