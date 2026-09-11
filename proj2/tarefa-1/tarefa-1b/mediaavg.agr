@@ -9,7 +9,6 @@
 @map font 10 to "Courier-Bold", "Courier-Bold"
 @map font 11 to "Courier-BoldOblique", "Courier-BoldOblique"
 @map font 9 to "Courier-Oblique", "Courier-Oblique"
-@map font 14 to "Courier-Regular", "Courier-Regular"
 @map font 15 to "D050000L-Regular", "D050000L-Regular"
 @map font 4 to "Helvetica", "Helvetica"
 @map font 6 to "Helvetica-Bold", "Helvetica-Bold"
@@ -49,10 +48,6 @@
 @map font 51 to "URWGothic-BookOblique", "URWGothic-BookOblique"
 @map font 52 to "URWGothic-Demi", "URWGothic-Demi"
 @map font 53 to "URWGothic-DemiOblique", "URWGothic-DemiOblique"
-@map font 54 to "Utopia-Bold", "Utopia-Bold"
-@map font 55 to "Utopia-BoldItalic", "Utopia-BoldItalic"
-@map font 56 to "Utopia-Italic", "Utopia-Italic"
-@map font 57 to "Utopia-Regular", "Utopia-Regular"
 @map font 58 to "Z003-MediumItalic", "Z003-MediumItalic"
 @map font 13 to "ZapfDingbats", "ZapfDingbats"
 @map color 0 to (255, 255, 255), "white"
@@ -90,7 +85,7 @@
 @timestamp rot 0
 @timestamp font 0
 @timestamp char size 1.000000
-@timestamp def "Wed Aug 26 12:02:34 2026"
+@timestamp def "Tue Sep  1 15:34:37 2026"
 @r0 off
 @link r0 to g0
 @r0 type above
@@ -137,15 +132,15 @@
 @g0 fixedpoint format general general
 @g0 fixedpoint prec 6, 6
 @with g0
-@    world 1, 0.01, 100, 0.398107170553
+@    world 1, 0.01, 100, 0.398107171
 @    stack world 0, 0, 0, 0
 @    znorm 1
 @    view 0.150000, 0.150000, 1.150000, 0.850000
-@    title ""
+@    title "\f{Symbol}s\f{Times-Roman}\s <r> \N x N"
 @    title font 0
 @    title size 1.500000
 @    title color 1
-@    subtitle ""
+@    subtitle "Desvio Padrao das Medias por Tamanho da Sequencia"
 @    subtitle font 0
 @    subtitle size 1.000000
 @    subtitle color 1
@@ -160,7 +155,7 @@
 @    xaxis  bar color 1
 @    xaxis  bar linestyle 1
 @    xaxis  bar linewidth 1.0
-@    xaxis  label ""
+@    xaxis  label "N"
 @    xaxis  label layout para
 @    xaxis  label place auto
 @    xaxis  label char size 1.000000
@@ -211,8 +206,8 @@
 @    yaxis  bar color 1
 @    yaxis  bar linestyle 1
 @    yaxis  bar linewidth 1.0
-@    yaxis  label ""
-@    yaxis  label layout para
+@    yaxis  label "\f{Symbol}s\f{Times-Roman}\s <r>"
+@    yaxis  label layout perp
 @    yaxis  label place auto
 @    yaxis  label char size 1.000000
 @    yaxis  label font 0
@@ -377,7 +372,7 @@
 @    s1 errorbar riser clip off
 @    s1 errorbar riser clip length 0.100000
 @    s1 comment "partition 2 of set G0.S0"
-@    s1 legend  ""
+@    s1 legend  "Pontos Amostrais"
 @    s2 hidden false
 @    s2 type xy
 @    s2 symbol 0
@@ -426,7 +421,56 @@
 @    s2 errorbar riser clip off
 @    s2 errorbar riser clip length 0.100000
 @    s2 comment "1 deg fit of set 1"
-@    s2 legend  ""
+@    s2 legend  "y = 0.39 * x**-0.57"
+@    s3 hidden true
+@    s3 type xy
+@    s3 symbol 0
+@    s3 symbol size 1.000000
+@    s3 symbol color 4
+@    s3 symbol pattern 1
+@    s3 symbol fill color 4
+@    s3 symbol fill pattern 0
+@    s3 symbol linewidth 1.0
+@    s3 symbol linestyle 1
+@    s3 symbol char 65
+@    s3 symbol char font 0
+@    s3 symbol skip 0
+@    s3 line type 1
+@    s3 line linestyle 1
+@    s3 line linewidth 1.0
+@    s3 line color 4
+@    s3 line pattern 1
+@    s3 baseline type 0
+@    s3 baseline off
+@    s3 dropline off
+@    s3 fill type 0
+@    s3 fill rule 0
+@    s3 fill color 1
+@    s3 fill pattern 1
+@    s3 avalue off
+@    s3 avalue type 2
+@    s3 avalue char size 1.000000
+@    s3 avalue font 0
+@    s3 avalue color 1
+@    s3 avalue rot 0
+@    s3 avalue format general
+@    s3 avalue prec 3
+@    s3 avalue prepend ""
+@    s3 avalue append ""
+@    s3 avalue offset 0.000000 , 0.000000
+@    s3 errorbar on
+@    s3 errorbar place both
+@    s3 errorbar color 4
+@    s3 errorbar pattern 1
+@    s3 errorbar size 1.000000
+@    s3 errorbar linewidth 1.0
+@    s3 errorbar linestyle 1
+@    s3 errorbar riser linewidth 1.0
+@    s3 errorbar riser linestyle 1
+@    s3 errorbar riser clip off
+@    s3 errorbar riser clip length 0.100000
+@    s3 comment "1 deg fit of set 1"
+@    s3 legend  ""
 @    s4 hidden true
 @    s4 type xy
 @    s4 symbol 0
@@ -687,6 +731,12 @@
 1 0.38978052
 50.5 0.041305483
 100 0.027938179
+&
+@target G0.S3
+@type xy
+9 0.11084003
+27 0.05910645
+81 0.031519051
 &
 @target G0.S4
 @type xy
