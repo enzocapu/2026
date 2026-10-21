@@ -14,14 +14,13 @@
 
       do i=1,n
         tk=tk+(dt*pc)
-        t=t+dt
+        t=i*dt
         if(i.ne.n) then
           if(mod(i,2).eq.0) then
             s=s+2*v(tk)
             write(20,*) t,(dt/3)*s
             else
             s=s+4*v(tk)
-            write(20,*) t,(dt/3)*s
           endif
         endif
         write(10,*) t,v(tk)
