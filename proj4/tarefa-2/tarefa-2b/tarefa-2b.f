@@ -1,4 +1,4 @@
-      dimension dt(2)
+      dimension dt(2),dxmax(2),tmax(2)
       
       open(10,file='tarefa-2b-dx1.dat')
       open(20,file='tarefa-2b-dx2.dat')
@@ -16,6 +16,8 @@
       ak=(rho*A*cd)/(2*dm) !constante ar
       n=90 !num. intervalos (=1grau)
       dtheta=(pi/2)/n
+      dxmax(1)=0 !alcance maximo
+      dxmax(2)=0
 
       do k=1,n !varia theta
             do j=1,2 !varia dt
@@ -33,8 +35,15 @@
                   v=sqrt(vx**2+vy**2)
                   vx=vx-ak*v*vx*dt(j)
                   vy=vy-(g+ak*v*vy)*dt(j)
-                  if(y*(y+vy*dt(j)).lt.0) then                  
-                        write(10,*) theta, x
+                  if(y*(y+vy*dt(j)).lt.0) then
+                        y2=y+vy*dt(j)
+                        x2=x+vx*dt(j)
+                        x0=x-y*(x2-x)/(y2-y)                
+                        write(j*10,*) theta*180/pi, x0
+                        if(x0.gt.dxmax(j)) then
+                              dxmax(j)=x0
+                              tmax(j)=theta*180/pi
+                        endif
                         goto 44
                   endif
                   goto 77
@@ -42,6 +51,9 @@
             enddo
       enddo
 
-            close(10)
+      do j=1,2
+            write(*,*) dt(j), tmax(j), dxmax(j)
+            close(j*10)
+      enddo
 
       end

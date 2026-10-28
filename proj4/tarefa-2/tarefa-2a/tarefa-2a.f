@@ -1,8 +1,7 @@
       dimension vx(3),vy(3),y(3),x(3),theta(3),ak(2),dt(2)
-      anom='tarefa-2a-r-dt'
-      do j=1,2
-            adt=
-      enddo
+      character*20 nome
+100   format(a,3i1,a)       
+
       dm=42
       d=149.1e-3 !diametro projetil
       pi=4*atan(1e0)
@@ -22,8 +21,9 @@
       do j=1,3 !varia theta
             do k=1,2 !varia res. ar (1:lig,2:desl)
                   do l=1,2 !var. dt
+                        write(nome,100) 'tarefa-2a-r-',j,k,l,'.dat'               
                         jj=(j*10)+(2*k)+l !indice nao repetivel
-                        open(jj)
+                        open(jj, file=nome)
                         t=0
                         i=0
                         vx(j)=v0*cos(theta(j))
