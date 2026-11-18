@@ -20,7 +20,7 @@
         if(i.ne.n) then
           if(mod(i,2).eq.0) then
             s=s+2*v(tk)
-            write(20,*) t,(dt/3)*s
+            write(20,*) t,(dt/3)*(s-v(tk))
             else
             s=s+4*v(tk)
           endif
