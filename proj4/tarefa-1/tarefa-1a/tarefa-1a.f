@@ -1,4 +1,4 @@
-      v(x)=sqrt(2*x/dm)
+      v(x)=sqrt(2*x/dm) 
       tk=0
       dt=0.1
       pc=400
@@ -18,7 +18,7 @@
         if(i.ne.n) then
           if(mod(i,2).eq.0) then
             s=s+2*v(tk)
-            write(20,*) t,(dt/3)*s
+            write(20,*) t,(dt/3)*(s-v(tk))
             else
             s=s+4*v(tk)
           endif
